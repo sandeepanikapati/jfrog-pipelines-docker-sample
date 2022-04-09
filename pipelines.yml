@@ -10,7 +10,7 @@ resources:
   - name: dbp_image
     type: Image
     configuration:
-      registry: art                                # <-- replace with your artifactory integration
+      registry: Generic                                # <-- replace with your artifactory integration
       sourceRepository: san-docker_local               # <-- required if registry is Artifactory
       imageName: san-docker_local/ubuntu  # < -- replace with your image path and name
       imageTag: latest
