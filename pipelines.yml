@@ -19,7 +19,7 @@ resources:
   - name: dbp_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: Generic
       buildName: dbp_build
       buildNumber: 1    
 
@@ -51,7 +51,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dbp_group
-          targetRepository: san-docker-local
+          targetRepository: docker-local
           integrations:
             - name: Generic                            # <-- replace with your artifactory integration
           inputSteps:
@@ -70,7 +70,7 @@ pipelines:
       - name: promote_dbp_build
         type: PromoteBuild
         configuration:
-          targetRepository: demo-pipelines
+          targetRepository: docker-local
           integrations:
             - name: Generic
           inputResources:
