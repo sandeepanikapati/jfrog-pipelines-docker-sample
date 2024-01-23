@@ -45,5 +45,5 @@ jobs:
         run: |
           docker buildx imagetools create \
             --tag hts2-docker-d1.jfrog.io/app:latest \
-            --tag hts2-docker-d2.jfrog.io/test/app:1.0.0 \
+            --tag hts2-docker-d2.jfrog.io/app:1.0.0 \
                sanikapati/app:latest
