@@ -41,7 +41,7 @@ jobs:
           tags: |
              sanikapati/app:latest
              sanikapati/app:1.0.0
-      - name: Push image to JFROG12
+      - name: Push image to JFROG12.
         run: |
           docker buildx imagetools create \
             --tag hts2-docker-d1.jfrog.io/app:latest \
