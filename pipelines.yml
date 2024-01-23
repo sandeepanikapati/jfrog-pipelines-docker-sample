@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: SandGit                       # <-- replace with your integration
-      path: sandeepanikapati/jfrog-pipelines-docker-sample    # <-- replace with your repository name
+      path: sandeepanikapati/jfrog-pipelines-docker-sample    # <-- replace with your repository name hello
       branches:
         include: master
 
