@@ -28,8 +28,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            user/app:latest
-            user/app:1.0.0
+             app:latest
+             app:1.0.0
       - name: Push image to GHCR
         run: |
           docker buildx imagetools create \
