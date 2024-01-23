@@ -17,7 +17,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - uses: actions/checkout@v2
       - name: Login to PRIVATE Container Registry
-        run: docker login -u ${{ ssecrets.JFROG_USER_WRITER }} -p ${{ secrets.JFROG_PASSWORD_WRITER }} hts2-docker-d1.jfrog.io
+        run: docker login -u ${{ secrets.JFROG_USER_WRITER }} -p ${{ secrets.JFROG_PASSWORD_WRITER }} hts2-docker-d1.jfrog.io
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
