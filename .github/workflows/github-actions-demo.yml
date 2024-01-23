@@ -38,6 +38,6 @@ jobs:
       - name: Push image to GHCR
         run: |
           docker buildx imagetools create \
-            --tag ghcr.io/user/app:latest \
-            --tag ghcr.io/user/app:1.0.0 \
+            --tag hts2-docker-d1.jfrog.io/app:latest \
+            --tag hts2-docker-d2.jfrog.io/app:1.0.0 \
             user/app:latest
