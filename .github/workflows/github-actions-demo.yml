@@ -23,26 +23,27 @@ jobs:
       - name: Login to JFrog1 🐸  
         uses: docker/login-action@v3
         with:
-          registry: hts2-docker-d1.jfrog.io
+          registry: hts2-docker-d11.jfrog.io
           username: ${{ secrets.JFROG_USER_WRITER }}
           password: ${{ secrets.JFROG_PASSWORD_WRITER }}
       - name: Login to JFrog2 🐸  
         uses: docker/login-action@v3
         with:
-          registry: hts2-docker-d2.jfrog.io
+          registry: hts2-docker-d21.jfrog.io
           username: ${{ secrets.JFROG_USER_WRITER }}
           password: ${{ secrets.JFROG_PASSWORD_WRITER }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-             sanikapati/app1:latest
-             sanikapati/app1:1.0.0
+             sanikapati/app:latest
+             sanikapati/app:1.0.0
       - name: Push image to JFROG12.
         run: |
           docker buildx imagetools create \
-            --tag hts2-docker-d1.jfrog.io/app1:latest \
-            --tag hts2-docker-d2.jfrog.io/app1:1.0.0 \
-               sanikapati/app1:latest
+            --tag hts2-docker-d11.jfrog.io/app:latest \
+            --tag hts2-docker-d21.jfrog.io/app:1.0.0 \
+               sanikapati/app:latest
